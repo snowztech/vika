@@ -8,8 +8,6 @@
   <i>A Go framework to build always-on AI assistants. One YAML, one binary, deploy anywhere.</i>
 </p>
 
----
-
 You define an assistant in YAML, run it, and use it on Discord or Slack.
 Vika ships with a default assistant ready to use.
 
@@ -29,22 +27,25 @@ vika run
 
 ## What is Vika?
 
-- Define assistants in YAML
-- Connect via Discord or Slack
-- Built-in tools: bash, file, web search, GitHub
-- Per-agent workspace isolation
-- Chat via terminal with `vika chat`
+Vika is the harness your assistants run on. It handles the agent loop, context engineering, prompt caching, memory, tool execution, and transport wiring, so you don't rewrite them for every bot.
+
+- **Providers**: Anthropic, OpenAI-compatible, Ollama.
+- **Tools**: bash, file, web search, grep, glob.
+- **Memory**: file, SQLite, pgvector.
+- **Transports**: terminal, Discord, Slack, Telegram.
+- **Per-agent isolation**: workspace, memory, and secrets per assistant.
+- **Scaffolder**: `vika create` spins up a new assistant.
 
 ---
 
 ## Documentation
 
-- [ARCHITECTURE.md](docs/ARCHITECTURE.md) — core concepts, interfaces, directory layout
-- [CHARACTER.md](docs/CHARACTER.md) — full YAML spec with examples
-- [ROADMAP.md](docs/ROADMAP.md) — where we're headed
+- [ARCHITECTURE.md](docs/ARCHITECTURE.md): core concepts, interfaces, directory layout.
+- [CHARACTER.md](docs/CHARACTER.md): full YAML spec with examples.
+- [ROADMAP.md](docs/ROADMAP.md): where we're headed.
 
 ---
 
 ## License
 
-[MIT](LICENSE) — Copyright (c) 2026 snowztech
+[MIT](LICENSE). Copyright (c) 2026 snowztech.
