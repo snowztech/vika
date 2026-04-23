@@ -8,12 +8,11 @@
   <i>A Go framework to build always-on AI assistants. One YAML, one binary, deploy anywhere.</i>
 </p>
 
-You define an assistant in YAML, run it, and use it on Discord or Slack.
-Vika ships with a default assistant ready to use.
+---
 
-An assistant has personality, tools, memory, and a transport. Same binary,
-different YAMLs. One for a coding assistant, one for a support bot,
-one for a Discord mascot. Configure in YAML, run, done.
+An assistant has personality, tools, memory, and a transport. You define one in YAML, run it, and use it on Discord or Slack. Same binary, different YAMLs: a coding assistant, a support bot, a Discord mascot.
+
+Vika ships with a default assistant ready to use.
 
 ## What is Vika?
 
@@ -24,7 +23,6 @@ Vika is the harness your assistants run on. It handles the agent loop, context e
 - **Memory**: file, SQLite, pgvector.
 - **Transports**: terminal, Discord, Slack, Telegram.
 - **Per-agent isolation**: workspace, memory, and secrets per assistant.
-- **Observability**: structured per-turn logs with tokens, cache hits, and cost.
 - **Scaffolder**: `vika create` spins up a new assistant.
 
 ---
