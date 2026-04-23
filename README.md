@@ -1,19 +1,38 @@
-<!--<div align="center">
-<img src="assets/vika.png" width="200" alt="Vika" />
-<h1>Vika</h1>
-<h3><em>A Go framework to build always-on AI assistants. One YAML, one binary, deploy anywhere.</em></h3>
-</div>-->
-
 <div align="center">
-<img src="assets/vika.png" alt="Vika" width="120" height="120">
-<h1>Vika</h1>
-<h3><i>A Go framework to build always-on AI assistants. One YAML, one binary, deploy anywhere.</i></h3>
-<p>
-<a href="LICENSE">
-  <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="MIT License">
-</a>
-</p>
+    <img src="assets/vika.png" alt="Vika" width="150" style="border-radius: 10px; border-width: 1px;">
+    <h1>Vika</h1>
+    <h3><em>A Go framework to build AI assistants. One YAML, one binary, deploy anywhere.</em></h3>
+    <p>
+    <p>
+      <a href="https://github.com/snowztech/vika/releases/latest">
+        <img src="https://img.shields.io/github/v/release/snowztech/vika?style=flat&logo=github" alt="Latest Release" />
+      </a>
+      <a href="https://github.com/snowztech/vika/actions/workflows/release.yml">
+        <img src="https://github.com/snowztech/vika/actions/workflows/release.yml/badge.svg" alt="Build Status" />
+      </a>
+      <a href="https://github.com/snowztech/vika/stargazers">
+        <img src="https://img.shields.io/github/stars/snowztech/vika?style=flat&logo=github" alt="Stars" />
+      </a>
+      <a href="https://github.com/snowztech/vika/network/members">
+        <img src="https://img.shields.io/github/forks/snowztech/vika?style=flat&logo=github" alt="Forks" />
+      </a>
+      <a href="https://github.com/snowztech/vika/issues">
+        <img src="https://img.shields.io/github/issues/snowztech/vika?style=flat&logo=github" alt="Issues" />
+      </a>
+      <a href="https://github.com/snowztech/vika/graphs/contributors">
+        <img src="https://img.shields.io/github/contributors/snowztech/vika?style=flat&logo=github" alt="Contributors" />
+      </a>
+      <a href="https://github.com/sponsors/lucasnevespereira">
+        <img src="https://img.shields.io/badge/Sponsor-GitHub-333333?style=flat&logo=github&logoColor=white" alt="Sponsor" />
+      </a>
+      <a href="LICENSE">
+        <img src="https://img.shields.io/badge/License-MIT-green.svg?style=flat" alt="MIT License" />
+      </a>
+    </p>
+    </p>
 </div>
+
+---
 
 An assistant has personality, tools, memory, and a transport. You define one in YAML, run it, and use it on Discord or Slack. Same binary, different YAMLs: a coding assistant, a support bot, a Discord mascot.
 
