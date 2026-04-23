@@ -1,14 +1,8 @@
-<p align="center">
-  <img src="assets/vika.png" width="200" alt="Vika" />
-</p>
-
-<h1 align="center">Vika</h1>
-
-<p align="center">
-  <i>A Go framework to build always-on AI assistants. One YAML, one binary, deploy anywhere.</i>
-</p>
-
----
+<div align="center">
+<img src="assets/vika.png" width="200" alt="Vika" />
+<h1>Vika</h1>
+<h3><em>A Go framework to build always-on AI assistants. One YAML, one binary, deploy anywhere.</em></h3>
+</div>
 
 An assistant has personality, tools, memory, and a transport. You define one in YAML, run it, and use it on Discord or Slack. Same binary, different YAMLs: a coding assistant, a support bot, a Discord mascot.
 
