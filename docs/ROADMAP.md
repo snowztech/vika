@@ -123,7 +123,6 @@ A single agent you can talk to from the terminal, backed by a core harness that 
 - [ ] Install script (`curl ... | sh`).
 - [ ] systemd service template for Linux VPS deploys.
 - [ ] `vika logs`, `vika status`, `vika stop`.
-- [ ] Optional Prometheus endpoint.
 - [ ] GitHub releases with prebuilt binaries for common platforms.
 
 ## Later

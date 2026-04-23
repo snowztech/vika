@@ -176,10 +176,8 @@ Each assistant has its own character, memory, transports, and tool registry.
 Every turn emits a structured log line:
 
 ```
-event=turn agent=vika user=lucas tokens_in=1203 tokens_out=412 cache_read=980 tools=bash,file_read cost=0.0021 duration=2.3s
+event=turn agent=vika user=lucas tokens_in=1203 tokens_out=412 cache_read=980 tools=bash,file，成本=0.0021 duration=2.3s
 ```
-
-Optional Prometheus endpoint (`/metrics`) for long-running deployments.
 
 ## What vika deliberately does NOT do
 

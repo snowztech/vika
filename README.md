@@ -21,8 +21,9 @@ Vika is the harness your assistants run on. It handles the agent loop, context e
 - **Tools**: bash, file, web search, grep, glob.
 - **Memory**: file, SQLite, pgvector.
 - **Transports**: terminal, Discord, Slack, Telegram.
-- **Per-agent isolation**: workspace, memory, and secrets per assistant.
-- **Scaffolder**: `vika create` spins up a new assistant.
+- **Isolation**: separate workspace and secrets per assistant.
+- **Scaffolder**: `vika create name` spawns a new assistant.
+- **Observability**: structured logs, tokens, cost, duration.
 
 ---
 
