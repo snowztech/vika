@@ -1,28 +1,28 @@
 <div align="center">
-    <img src="assets/vika.png" alt="Vika" width="180" style="border-radius: 10px; border-width: 1px;">
-    <h1>Vika</h1>
+    <img src="assets/vikusha.png" alt="Vikusha" width="180" style="border-radius: 10px; border-width: 1px;">
+    <h1>Vikusha</h1>
     <h3><em>Go framework for AI assistants. Run where you need them.</em></h3>
     <p>
-    <a href="https://github.com/snowztech/vika/stargazers"><img src="https://img.shields.io/github/stars/snowztech/vika?style=flat&logo=github" alt="Stars"></a>
-    <a href="https://github.com/snowztech/vika/network/members"><img src="https://img.shields.io/github/forks/snowztech/vika?style=flat&logo=github" alt="Forks"></a>
-    <a href="https://github.com/snowztech/vika/issues"><img src="https://img.shields.io/github/issues/snowztech/vika?style=flat&logo=github" alt="Issues"></a>
-    <a href="https://github.com/snowztech/vika/graphs/contributors"><img src="https://img.shields.io/github/contributors/snowztech/vika?style=flat&logo=github" alt="Contributors"></a>
+    <a href="https://github.com/snowztech/vikusha/stargazers"><img src="https://img.shields.io/github/stars/snowztech/vikusha?style=flat&logo=github" alt="Stars"></a>
+    <a href="https://github.com/snowztech/vikusha/network/members"><img src="https://img.shields.io/github/forks/snowztech/vikusha?style=flat&logo=github" alt="Forks"></a>
+    <a href="https://github.com/snowztech/vikusha/issues"><img src="https://img.shields.io/github/issues/snowztech/vikusha?style=flat&logo=github" alt="Issues"></a>
+    <a href="https://github.com/snowztech/vikusha/graphs/contributors"><img src="https://img.shields.io/github/contributors/snowztech/vikusha?style=flat&logo=github" alt="Contributors"></a>
     <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green?style=flat" alt="License"></a>
     </p>
 </div>
 
-An assistant has personality, tools, memory, and a transport. You define one in YAML, run it, and use it on Discord or Slack. Same binary, different YAMLs: a coding assistant, a support bot, a Discord bot. Vika ships with a default assistant ready to use.
+An assistant has personality, tools, memory, and a transport. You define one in YAML, run it, and use it on Discord or Slack. Same binary, different YAMLs: a coding assistant, a support bot, a Discord bot. Vikusha ships with a default assistant ready to use.
 
-## What is Vika?
+## What is Vikusha?
 
-Vika is the harness your assistants run on. It handles the agent loop, context engineering, prompt caching, memory, tool execution, and transport wiring. You write the character YAML, the harness does the rest.
+Vikusha is the harness your assistants run on. It handles the agent loop, context engineering, prompt caching, memory, tool execution, and transport wiring. You write the character YAML, the harness does the rest.
 
 - **Providers**: Anthropic, OpenAI-compatible, Ollama.
 - **Tools**: bash, file, web search, grep, glob.
 - **Memory**: file, SQLite, pgvector.
 - **Transports**: terminal, Discord, Slack, Telegram.
 - **Isolation**: separate workspace and secrets per assistant.
-- **Scaffolder**: `vika create name` spawns a new assistant.
+- **Scaffolder**: `vikusha create name` spawns a new assistant.
 - **Observability**: structured logs, tokens, cost, duration.
 
 ---
@@ -30,9 +30,9 @@ Vika is the harness your assistants run on. It handles the agent loop, context e
 ## Quickstart
 
 ```bash
-go install github.com/snowztech/vika/cmd/vika@latest
-vika setup
-vika run
+go install github.com/snowztech/vikusha/cmd/vikusha@latest
+vikusha setup
+vikusha run
 ```
 
 ---

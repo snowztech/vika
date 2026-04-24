@@ -3,12 +3,12 @@
 ## Design principles
 
 1. **Small core, clear interfaces.** The core package fits in one head. Extensions plug into named interfaces.
-2. **Go-native core.** Vika's core is a single Go binary. Extensions are Go packages imported at build time.
+2. **Go-native core.** Vikusha's core is a single Go binary. Extensions are Go packages imported at build time.
 3. **No abstraction layers over provider SDKs.** Call OpenAI, Anthropic, etc. directly. Expose the raw request shape when needed.
 4. **Flat conceptual model.** Tools, transports, memory backends, and LLM providers are distinct, named concepts.
 5. **Character as data.** A YAML file is the entire assistant definition. Same binary, different YAML = different assistant.
 6. **Observability over magic.** The user always sees which tool ran, which model was called, which memory was injected.
-7. **Two modes of use.** CLI for 90% of users (`vika run character.yaml`), Go library for the 10% who embed Vika in custom binaries or SaaS backends.
+7. **Two modes of use.** CLI for 90% of users (`vikusha run character.yaml`), Go library for the 10% who embed Vikusha in custom binaries or SaaS backends.
 
 ## Core concepts
 
@@ -83,26 +83,26 @@ Optional retrieval pipeline layered on top of `Memory`. Chunks documents, embeds
 
 ## Built-in tools
 
-Vika ships with these tools bundled in the binary:
+Vikusha ships with these tools bundled in the binary:
 
-| Tool | What it does |
-|------|--------------|
-| `bash` | Run any bash command |
-| `file_read` | Read a file |
-| `file_edit` | Edit a file (replace text) |
-| `file_list` | List directory contents |
-| `web_search` | Search the web |
-| `web_fetch` | Fetch a URL and extract text |
-| `github` | GitHub API tools (issues, PRs, repos) |
-| `http` | Generic HTTP requests |
+| Tool         | What it does                          |
+| ------------ | ------------------------------------- |
+| `bash`       | Run any bash command                  |
+| `file_read`  | Read a file                           |
+| `file_edit`  | Edit a file (replace text)            |
+| `file_list`  | List directory contents               |
+| `web_search` | Search the web                        |
+| `web_fetch`  | Fetch a URL and extract text          |
+| `github`     | GitHub API tools (issues, PRs, repos) |
+| `http`       | Generic HTTP requests                 |
 
 Users enable tools per assistant in their character.yaml.
 
 ## Directory layout
 
 ```
-vika/
-├── core/                   # vika-core (Go library)
+vikusha/
+├── core/                   # vikusha-core (Go library)
 │   ├── agent/              # agent loop, chat, tool handling
 │   ├── character/          # YAML loader + validation
 │   ├── tool/               # Tool interface + registry
@@ -111,23 +111,23 @@ vika/
 │   ├── memory/             # file, sqlite, pgvector
 │   └── rag/                # chunking, retrieval
 ├── tools/                  # bundled tool implementations
-├── cmd/vika/               # CLI binary
+├── cmd/vikusha/               # CLI binary
 │   ├── setup.go            # wizard for initial config
 │   ├── run.go              # run agents
 │   ├── create.go           # scaffold new agent
 │   └── chat.go             # terminal UI
 ├── characters/
-│   └── vika.yaml           # default Vika assistant
+│   └── vikusha.yaml           # default Vikusha assistant
 ├── docs/
-└── go.mod                  # module: github.com/snowztech/vika
+└── go.mod                  # module: github.com/snowztech/vikusha
 ```
 
 ## Data directory
 
-Vika stores per-assistant data in `~/.vika/`:
+Vikusha stores per-assistant data in `~/.vikusha/`:
 
 ```
-~/.vika/
+~/.vikusha/
 ├── config.yaml             # global config (API keys, tokens)
 └── agents/
     └── <name>/
@@ -154,7 +154,7 @@ No parallel tool calls in v1. Sequential works. Revisit if a real use case needs
 
 ## Context management
 
-Vika enforces the same discipline:
+Vikusha enforces the same discipline:
 
 - Prompt caching on system and tool definitions (Anthropic, OpenAI `prompt_cache_key`).
 - Budgeted history. Default 30k token cap. Trim oldest with a summary preamble.
@@ -163,10 +163,10 @@ Vika enforces the same discipline:
 
 ## Multi-agent
 
-A single vika binary can run multiple assistants from day one:
+A single vikusha binary can run multiple assistants from day one:
 
 ```bash
-vika run vika coach koda
+vikusha run vikusha coach koda
 ```
 
 Each assistant has its own character, memory, transports, and tool registry.
@@ -176,14 +176,14 @@ Each assistant has its own character, memory, transports, and tool registry.
 Every turn emits a structured log line:
 
 ```
-event=turn agent=vika user=lucas tokens_in=1203 tokens_out=412 cache_read=980 tools=bash,file，成本=0.0021 duration=2.3s
+event=turn agent=vikusha user=lucas tokens_in=1203 tokens_out=412 cache_read=980 tools=bash,file，成本=0.0021 duration=2.3s
 ```
 
-## What vika deliberately does NOT do
+## What vikusha deliberately does NOT do
 
 - **No vector DB of its own.** Use SQLite-VSS, pgvector, or Chroma via the `Memory` interface.
 - **No agent-builder UI.** YAML + Go is the interface. Building a web UI is a separate project.
 - **No LangChain-style chain abstraction.** The chat loop IS the abstraction.
 - **No sub-agents, no delegation, no task graphs.** A single agent calls tools. That's it. If you need multi-step planning, put it in a tool.
-- **No MCP.** Too much token overhead for the personal-scale use cases vika targets. Revisit if that changes.
+- **No MCP.** Too much token overhead for the personal-scale use cases vikusha targets. Revisit if that changes.
 - **No evaluators.** Post-response scoring is out of scope for v1.

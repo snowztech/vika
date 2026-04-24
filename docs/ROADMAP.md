@@ -43,7 +43,7 @@ A single agent you can talk to from the terminal, backed by a core harness that 
 
 ### Per-agent workspace
 
-- [ ] Each agent owns `~/.vika/agents/<name>/` with its own memory, workspace, and logs.
+- [ ] Each agent owns `~/.vikusha/agents/<name>/` with its own memory, workspace, and logs.
 - [ ] File tools default-scoped to the agent's workspace.
 - [ ] Paths outside the workspace require explicit approval, persisted per agent.
 - [ ] Path resolution blocks `..` escapes and symlinks pointing outside the workspace.
@@ -64,7 +64,7 @@ A single agent you can talk to from the terminal, backed by a core harness that 
 
 ### Transports
 
-- [ ] CLI REPL (`vika chat <char.yaml>`).
+- [ ] CLI REPL (`vikusha chat <char.yaml>`).
 
 ### Observability
 
@@ -74,9 +74,9 @@ A single agent you can talk to from the terminal, backed by a core harness that 
 
 ### CLI
 
-- [ ] `vika run <char.yaml>`: start an agent.
-- [ ] `vika chat <char.yaml>`: interactive terminal session.
-- [ ] `vika version`.
+- [ ] `vikusha run <char.yaml>`: start an agent.
+- [ ] `vikusha chat <char.yaml>`: interactive terminal session.
+- [ ] `vikusha version`.
 
 ## Next (v0.2 to v0.7)
 
@@ -90,15 +90,15 @@ A single agent you can talk to from the terminal, backed by a core harness that 
 
 ### v0.3: scaffolding new agents
 
-- [ ] `vika create <name>` scaffolds a new agent from a template.
+- [ ] `vikusha create <name>` scaffolds a new agent from a template.
 - [ ] Built-in templates: `personal`, `support`, `dev`.
 - [ ] Generated output: `main.go`, `character.yaml`, `.env.example`, `Makefile`.
-- [ ] `vika build <dir>` wraps `go build` so non-Go users get one command.
+- [ ] `vikusha build <dir>` wraps `go build` so non-Go users get one command.
 
 ### v0.4: config and setup
 
-- [ ] `vika setup` wizard for API keys, transport tokens, default provider.
-- [ ] Encrypted global config at `~/.vika/config`.
+- [ ] `vikusha setup` wizard for API keys, transport tokens, default provider.
+- [ ] Encrypted global config at `~/.vikusha/config`.
 - [ ] Per-agent secret store, separate from the global config.
 - [ ] Connection test to verify keys and tokens before first run.
 
@@ -107,12 +107,12 @@ A single agent you can talk to from the terminal, backed by a core harness that 
 - [ ] SQLite memory backend.
 - [ ] pgvector memory backend for larger deployments.
 - [ ] RAG pipeline: chunking, embedding, retrieval, injection.
-- [ ] `vika ingest <agent> <path>` loads documents into an agent's memory.
+- [ ] `vikusha ingest <agent> <path>` loads documents into an agent's memory.
 - [ ] Retrieval config in YAML: top-k, min score, sources.
 
 ### v0.6: terminal polish
 
-- [ ] Bubbletea TUI for `vika chat`.
+- [ ] Bubbletea TUI for `vikusha chat`.
 - [ ] Streaming token rendering.
 - [ ] Markdown rendering with syntax highlighting.
 - [ ] Slash commands: `/new`, `/model`, `/tools`, `/status`.
@@ -122,12 +122,12 @@ A single agent you can talk to from the terminal, backed by a core harness that 
 
 - [ ] Install script (`curl ... | sh`).
 - [ ] systemd service template for Linux VPS deploys.
-- [ ] `vika logs`, `vika status`, `vika stop`.
+- [ ] `vikusha logs`, `vikusha status`, `vikusha stop`.
 - [ ] GitHub releases with prebuilt binaries for common platforms.
 
 ## Later
 
-- **Extensions repo.** A separate `vika-extensions` repo for integrations like Notion, Google Calendar, GitHub issues, Linear.
+- **Extensions repo.** A separate `vikusha-extensions` repo for integrations like Notion, Google Calendar, GitHub issues, Linear.
 - **Plugin loading beyond Go modules.** Subprocess tools over JSON stdio and WASM plugins are both worth exploring once the core is stable.
 - **Voice input.** Local Whisper transcription for voice messages on Discord or Telegram.
 - **Web dashboard.** Read-only view of agents, memory, and turn logs.
@@ -139,7 +139,7 @@ A single agent you can talk to from the terminal, backed by a core harness that 
 
 - Core harness stable and documented.
 - Discord and Slack transports running in production somewhere.
-- At least one non-default agent built with Vika and deployed.
+- At least one non-default agent built with Vikusha and deployed.
 - Test coverage on the agent loop, context trimming, and tool registry.
 - Install script and prebuilt binaries published.
 - Clear upgrade path from v0.x.
